@@ -1,0 +1,29 @@
+Containers
+Algorithms
+Functions
+Iterators
+
+
+1. Pair (utility library) 
+2. Vectors
+    - initialisation
+    - push_back
+    - front
+    - back 
+    - Iterator
+    - for each 
+    - erase
+    - insert
+    - size
+    - access element
+    - swap 
+    - clear
+3. list 
+    - push_front / emplace_front
+    - front
+4. deque
+5. stack(lifo)
+    - push / emplace
+    - top
+    - pop
+    
