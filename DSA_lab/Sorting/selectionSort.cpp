@@ -4,7 +4,7 @@ using namespace std;
 int main(){
   int arr[] = {13,46,24,52,20,9};
   int n = sizeof(arr) / sizeof(arr[0]);
-  // we will run loop till second last number , because we dont need to swap the last digit
+  // we will run loop till second last number , because we dont want to swap the last digit
   for(int i=0; i<=n-2; i++){
     int min = i;
     // run loop to find the minimum number
