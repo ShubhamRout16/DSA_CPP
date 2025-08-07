@@ -19,12 +19,13 @@ void displayArray(int arr[] , int size){
   return;
 }
 void  insertInArray(int arr[] , int position , int element , int size){
-  for(int i = size-1; i>=1; i--){
-    arr[i+1] = arr[i];
+  // Shift elements from position onwards to make space
+  for(int i = size-1; i >= position; i--){
+    arr[i] = arr[i-1];
   }
   arr[position] = element;
-  // array after insertion
-  for(int i=0; i<size; i++){
+  // array after insertion (now with proper size)
+  for(int i=0; i<=size; i++){
     printf("%d ",arr[i]);
   }
 }
@@ -70,16 +71,15 @@ int main(){
       break;}
     case 3:
       // call insert function
-      {int arr2[7] = {9,5,2,5,1};
+      {int arr2[10] = {9,5,2,5,1}; // Larger array to accommodate insertion
+      int actualSize = 5; // Track actual number of elements
       int position;
       printf("Enter the position \n");
       scanf("%d",&position);
       int insertionEl;
       printf("Enter the element to insert\n");
       scanf("%d",&insertionEl);
-      int size2;
-      size2 = sizeof(arr2) / sizeof(arr2[0]);
-      insertInArray(arr2 , position , insertionEl , size2);
+      insertInArray(arr2 , position , insertionEl , actualSize);
       break;}
     case 4:
       // call delete function
