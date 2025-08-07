@@ -1,6 +1,7 @@
 //  find the matrix multiplication
 #include<stdio.h>
 
+// this method of passig multidimensional arrays is called as variable length arrays
 void multiply(int row1 , int col1 , int col2 , int matrixA[row1][col1] , int matrixB[col1][col2]) {
     int result[row1][col2];
     // initialize the result array with zeroes

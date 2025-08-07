@@ -1,11 +1,11 @@
 // transpose of the matrix
 #include<stdio.h>
 void matrixTranspose(int row , int col , int arr[row][col]){
-  int t[row][col];
+  int t[col][row];  // Transpose matrix has swapped dimensions
   // transpose matrix initialise 0
-  for(int i=0; i<row; i++){
-    for(int j=0; j<col; j++){
-      t[row][col] = 0;
+  for(int i=0; i<col; i++){
+    for(int j=0; j<row; j++){
+      t[i][j] = 0;
     }
   }
   // transpose matrix logic
@@ -16,8 +16,8 @@ void matrixTranspose(int row , int col , int arr[row][col]){
   }
   // print array after transpose
   printf("Transpose of Matrix A:\n");
-  for(int i=0; i<row; i++){
-    for(int j=0; j<col; j++){
+  for(int i=0; i<col; i++){
+    for(int j=0; j<row; j++){
       printf("%d " , t[i][j]);
     }
     printf("\n");

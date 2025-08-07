@@ -2,22 +2,22 @@
 #include<stdio.h>
 void RowAndColumnSum(int row1 , int col1, int arr1[row1][col1]){
   // find the sum of every row
-  int rowSum = 0;
   for(int i=0; i<row1; i++){
+    int rowSum = 0;
     for(int j=0; j<col1; j++){
       rowSum += arr1[i][j]; 
     }
+    printf("Sum of row %d is %d\n", i+1, rowSum);
   }
-  printf("sum of every row is %d\n",rowSum);
 
   // find the sum of every column
-  int colSum = 0;
-  for(int i=0; i<col1; i++){
-    for(int j=0; j<row1; j++){
+  for(int j=0; j<col1; j++){
+    int colSum = 0;
+    for(int i=0; i<row1; i++){
       colSum += arr1[i][j];
     }
+    printf("Sum of column %d is %d\n", j+1, colSum);
   }
-  printf("sum of every column is %d\n",colSum);
 }
 int main(){
   int m, n;

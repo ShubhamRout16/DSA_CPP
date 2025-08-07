@@ -11,6 +11,7 @@ int isPresent(int uniqueArr[] , int uniqueInd , int value){
 int* removeDup(int arr[] , int n , int* newSize){
   // array to track unique elements from the original array
   // since we have to return unique array from function for which we will dynamically allocate memory to unique array
+  // malloc returns a pointer we are type casting into a integer
   int* uniqueArrEl = (int*)malloc(n * sizeof(int));
   // to track the index of the unique array
   int uniqInd = 0;
@@ -53,3 +54,5 @@ int main(){
   free(arr2);
   return 0;
 }
+
+// arr2 stores the address of the dynamically allocated array returned by functions its calling
