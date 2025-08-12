@@ -1,7 +1,8 @@
 // MAJORITY ELEMENT 
 // BRUTE FORCE 
 // TC -> O(N^2)
-#include<bits/stdc++.h>
+#include <iostream>
+#include <map>
 using namespace std;
 int majorityElement(vector<int> &arr){
   int n = arr.size();
