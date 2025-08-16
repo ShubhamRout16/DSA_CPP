@@ -6,6 +6,7 @@ int longestConsecutiveBetter(vector<int> &nums){
   int longest = 1;
   int lastSmaller = INT_MIN;
   int cntCurr = 0;
+  // we are distorting the array by sorting it
   sort(nums.begin() , nums.end());
   for(int i=0; i<n; i++){
     if(nums[i] - 1 == lastSmaller){
