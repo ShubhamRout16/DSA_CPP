@@ -22,14 +22,14 @@ vector<int> spiralMatrixOpti(vector<vector<int>> &nums){
     right--;
     if(top <= bottom){
       // 3rd movement -> right to left
-      for(int i=right; i>=left; i++){
+      for(int i=right; i>=left; i--){
         ans.push_back(nums[bottom][i]);
       }
       bottom--;
     }
     if(left <= right){
       // 4th movement -> bottom to top
-      for(int i=bottom; i>=top; i++){
+      for(int i=bottom; i>=top; i--){
         ans.push_back(nums[i][left]);
       }
       left++;
