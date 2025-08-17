@@ -8,7 +8,7 @@ vector<vector<int>> setMatrixZeroesBetter(vector<vector<int>> &nums){
   vector<int> row(rows , 0);
   // this loop runs for O(N*M)
   for(int i=0; i<rows; i++){
-    for(int j=0; j<columns; j++){
+    for(int j=0; j<columns; j++){ 
       if(nums[i][j] == 0){
         row[i] = 1;
         col[j] = 1;
