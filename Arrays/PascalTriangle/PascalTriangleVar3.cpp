@@ -35,3 +35,5 @@ int main(){
   }
   return 0;
 }
+// time complexity will be -> O(N^2) -> for generating row we were taking O(N) and for every column O(N)
+// space complexity will be -> O(1) -> we are only using space for storing the answer.
