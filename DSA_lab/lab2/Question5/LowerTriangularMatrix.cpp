@@ -37,19 +37,6 @@ int main(){
     }
   }
 
-  // defining and initialising the array for storing upperPart of the matrix to be 0
-  int upperPart[row-1];
-  for(int i=0; i<row-1; i++){
-    upperPart[i] = 0;
-  }
-
-  // logic for storing the upper part of the matrix
-  for(int i=0; i<=row-2; i++){
-    for(int j=row-1; j>0; j++){
-      upperPart[i] = arr[i][i+1];
-    }
-  }
-
   // defining and initialising the array for storing the lowerPart of the matrix to be 0
   int size = row * (row - 1) / 2 ; // formula for calculating the number of elements below diagonal
   int lowerPart[size];
