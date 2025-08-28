@@ -10,7 +10,7 @@ void distinctElements(int arr[] , int n){
         break;
       }
     }
-    if(duplicateEl == 0){
+    if(duplicateEl   == 0){
       count++;
     }
   }
