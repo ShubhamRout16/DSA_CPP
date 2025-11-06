@@ -2,20 +2,28 @@
 #include<iostream>
 using namespace std;
 
+struct Node{
+  Node *lchild;
+  int data;
+  Node *rchild;
+};
+
+Node *root = nullptr;
+
 struct Queue{
   int size;
   int front;
   int rear;
-  int *Q;
+  Node **Q;
 };
 
 void create(Queue *q , int size){
   q->size = size;
   q->front = q->rear = 0;
-  q->Q = new int[q->size];
+  q->Q = new Node*[q->size];
 }
 
-void enqueue(Queue *q , int x){
+void enqueue(Queue *q , Node *x){
   if((q->rear + 1) % q->size == q->front){
     cout << "Queue is full" << endl;
   }else{
@@ -24,8 +32,8 @@ void enqueue(Queue *q , int x){
   }
 }
 
-int dequeue(Queue *q){
-  int x = -1;
+Node* dequeue(Queue *q){
+  Node *x = nullptr;
   if(q->front == q->rear){
     cout << "Queue is empty" << endl;
   }else{
@@ -35,17 +43,56 @@ int dequeue(Queue *q){
   return x;
 }
 
-int main(){
-  Queue q;
-  int size;
+int isEmpty(Queue q){
+  return q.front == q.rear;
+}
 
-  cout << "Enter the size of queue : " << endl;
-  cin >> size;
-  create(&q , size);
-  enqueue(&q , 10);
-  enqueue(&q , 20);
-  enqueue(&q , 30);
-  cout << "Dequeued element is : " << dequeue(&q) << endl;
-  delete [] q.Q;
+void TreeCreate(){
+  struct Node *p , *t;
+  int x;
+  Queue q;
+  create(&q,100);
+
+  cout << "Enter root value : ";
+  cin >> x;
+  root = new Node;
+  root->data = x;
+  root->lchild = root->rchild = nullptr;
+  enqueue(&q , root);
+
+  while(!isEmpty(q)){
+    p = dequeue(&q);
+    cout << "Enter left child for " << p->data ;
+    cin >> x;
+    if(x != -1){
+      Node *t = new Node;
+      t->data = x;
+      t->lchild = t->rchild = nullptr;
+      p->lchild = t;
+      enqueue(&q,t);
+    }
+    cout << "Enter right child for " << p->data;
+    cin >> x;
+    if(x != -1){
+      Node *t = new Node;
+      t->data = x;
+      t->lchild = t->rchild = nullptr;
+      p->rchild = t;
+      enqueue(&q,t);
+    }
+  }
+}
+
+void preorder(Node *p){
+  if(p != nullptr){
+    cout << p->data << " ";
+    preorder(p->lchild);
+    preorder(p->rchild);
+  }
+}
+
+int main(){
+  TreeCreate();
+  preorder(root);
   return 0;
 }
