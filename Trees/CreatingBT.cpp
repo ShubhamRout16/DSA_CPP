@@ -91,8 +91,29 @@ void preorder(Node *p){
   }
 }
 
+void postOrder(Node *p){
+  if(p != nullptr){
+    preorder(p->lchild);
+    preorder(p->rchild);
+    cout << p->data << " ";
+  }
+}
+
+void Inorder(Node *p){
+  if(p != nullptr){
+    preorder(p->lchild);
+    cout << p->data << " ";
+    preorder(p->rchild);
+  }
+}
+
 int main(){
   TreeCreate();
+  cout << "Pre order traversal" << endl;
   preorder(root);
+  cout << "In order traversal" << endl;
+  Inorder(root);
+  cout << "Post order traversal" << endl;
+  postOrder(root);
   return 0;
 }
