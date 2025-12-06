@@ -10,6 +10,7 @@ struct Node{
 Node* Insertion(Node *t , int key){
   Node *r = nullptr , *p;
 
+  // if there is no node
   if(t == nullptr){
     p = new Node;
     p->data = key;
@@ -23,6 +24,7 @@ Node* Insertion(Node *t , int key){
     else if(key < t->data) t = t->lchild;
     else t = t->rchild;
   }
+  // stored data in new node
   p = new Node;
   p->data = key;
   p->lchild = p->rchild = nullptr;
