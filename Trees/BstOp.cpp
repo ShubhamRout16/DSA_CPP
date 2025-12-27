@@ -40,6 +40,7 @@ Node* insert(Node*root , int value){
       root = root->rchild;
     }
     else{
+      // if we want to duplicate
       // for duplication attach on right side
       root = root->rchild;
     }

@@ -9,7 +9,7 @@ struct Node{
 Node *ISearch(Node *t , int key){
   while(t!= nullptr){
     if(key == t->data) return t;
-    else if(key < t->data) return t = t->lchild;
+    else if(key < t->data) t = t->lchild;
     else t = t->rchild;
   }
   return nullptr;

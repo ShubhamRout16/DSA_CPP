@@ -58,7 +58,7 @@ class MaxHeap{
       return;
     }
 
-    // max heap ka top node delete hota ha
+    // max heap ka top node delete hota ha 
     cout << arr[0] << " deleted from the heap";
     arr[0] = arr[size-1];
     size--;
